@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Mi Portfolio
+---
+
+<div class="grid">
+  {% for proyecto in galeria %}
+    <div class="tarjeta">
+      <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
+      <h3>{{ proyecto.nombre }}</h3>
+    </div>
+  {% endfor %}
+</div>

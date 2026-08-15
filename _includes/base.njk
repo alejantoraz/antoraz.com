@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; background: #111; color: #eee; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .tarjeta img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; }
+    .tarjeta { text-decoration: none; color: inherit; }
+    .tarjeta h3 { margin-top: 0.5rem; font-weight: normal; }
+  </style>
+</head>
+<body>
+  {{ content | safe }}
+</body>
+</html>
