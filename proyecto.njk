@@ -1,0 +1,22 @@
+---
+pagination:
+  data: galeria
+  size: 1
+  alias: proyecto
+permalink: "/proyectos/{{ proyecto.nombre | slug }}/"
+layout: base.njk
+title: "{{ proyecto.nombre }}"
+pagina: proyectos
+---
+
+<a href="/" class="volver">← volver a proyectos</a>
+
+<h2 style="text-transform:lowercase; font-size:0.9rem; letter-spacing:0.03em; margin-bottom:2rem;">
+  {{ proyecto.nombre }}
+</h2>
+
+<div class="fotos-proyecto">
+  {% for imagen in proyecto.imagenes %}
+    <img src="{{ imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
+  {% endfor %}
+</div>
