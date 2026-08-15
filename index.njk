@@ -5,7 +5,7 @@ title: Antoraz — Portfolio
 
 <div class="grid">
   {% for proyecto in galeria %}
-    <a href="#" class="tarjeta">
+    <a href="/proyectos/{{ proyecto.nombre | slug }}/" class="tarjeta">
       <div class="tarjeta-img">
         <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
       </div>
