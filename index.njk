@@ -1,13 +1,15 @@
 ---
 layout: base.njk
-title: Mi Portfolio
+title: Antoraz — Portfolio
 ---
 
 <div class="grid">
   {% for proyecto in galeria %}
-    <div class="tarjeta">
-      <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
+    <a href="#" class="tarjeta">
+      <div class="tarjeta-img">
+        <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
+      </div>
       <h3>{{ proyecto.nombre }}</h3>
-    </div>
+    </a>
   {% endfor %}
 </div>
