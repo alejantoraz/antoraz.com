@@ -9,12 +9,12 @@ title: "{{ proyecto.nombre }}"
 pagina: proyectos
 ---
 
+<a href="/" class="volver">← volver a proyectos</a>
+
 <div class="cabecera-proyecto">
   <div class="descripcion-proyecto">
     {{ proyecto.descripcionHtml | safe }}
   </div>
-
-  <a href="/" class="volver">← volver a proyectos</a>
 </div>
 
 <div class="fotos-proyecto">
@@ -22,3 +22,5 @@ pagina: proyectos
     <img src="{{ imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
   {% endfor %}
 </div>
+
+<a href="/" class="volver">← volver a proyectos</a>
