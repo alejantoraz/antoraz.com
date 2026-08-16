@@ -10,10 +10,6 @@ pagina: proyectos
 ---
 
 <div class="cabecera-proyecto">
-  <h2 style="text-transform:lowercase; font-size:0.9rem; letter-spacing:0.03em; margin-bottom:1rem;">
-    {{ proyecto.titulo or proyecto.nombre }}
-  </h2>
-
   <div class="descripcion-proyecto">
     {{ proyecto.descripcionHtml | safe }}
   </div>
