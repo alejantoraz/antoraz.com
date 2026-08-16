@@ -50,7 +50,7 @@ module.exports = async function () {
 
     const claveMd = claves.find(key => key.endsWith(`${nombreProyecto}.md`));
 
-    let datos = { titulo: nombreProyecto, año: '', orden: 999, autor_texto: '' };
+    let datos = { titulo: nombreProyecto, año: '', orden: 999, autor_texto: '', portada: '' };
     let descripcionHtml = '';
 
     if (claveMd) {
@@ -60,6 +60,10 @@ module.exports = async function () {
       descripcionHtml = md.render(content);
     }
 
+    const portadaExplicita = datos.portada
+      ? `${process.env.B2_ENDPOINT}/${bucket}/${datos.portada}`
+      : null;
+
     if (imagenesGrande.length) {
       proyectos.push({
         nombre: nombreProyecto,
@@ -67,7 +71,7 @@ module.exports = async function () {
         año: datos.año,
         autor_texto: datos.autor_texto,
         orden: datos.orden,
-        portada: imagenesMini[0] || imagenesGrande[0],
+        portada: portadaExplicita || imagenesMini[0] || imagenesGrande[0],
         imagenes: imagenesGrande,
         descripcionHtml,
       });
