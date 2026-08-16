@@ -9,11 +9,17 @@ title: "{{ proyecto.nombre }}"
 pagina: proyectos
 ---
 
-<a href="/" class="volver">← volver a proyectos</a>
+<div class="cabecera-proyecto">
+  <h2 style="text-transform:lowercase; font-size:0.9rem; letter-spacing:0.03em; margin-bottom:1rem;">
+    {{ proyecto.titulo or proyecto.nombre }}
+  </h2>
 
-<h2 style="text-transform:lowercase; font-size:0.9rem; letter-spacing:0.03em; margin-bottom:2rem;">
-  {{ proyecto.nombre }}
-</h2>
+  <div class="descripcion-proyecto">
+    {{ proyecto.descripcionHtml | safe }}
+  </div>
+
+  <a href="/" class="volver">← volver a proyectos</a>
+</div>
 
 <div class="fotos-proyecto">
   {% for imagen in proyecto.imagenes %}
