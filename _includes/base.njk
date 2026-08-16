@@ -58,8 +58,22 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 2.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x proximity;
+  }
+  .tarjeta {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+  }
     }
     .tarjeta {
       text-decoration: none;
