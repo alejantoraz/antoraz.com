@@ -9,7 +9,7 @@ title: Antoraz — Portfolio
       <div class="tarjeta-img">
         <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
       </div>
-      <h3>{{ proyecto.nombre }}</h3>
+      <h3>{{ proyecto.titulo or proyecto.nombre }}</h3>
     </a>
   {% endfor %}
 </div>
