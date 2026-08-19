@@ -1,29 +1,10 @@
 ---
 layout: base.njk
-title: alejandro antoraz alonso — cv
+title: "cv"
 pagina: cv
 permalink: /cv/
 ---
 
 <div class="cv">
-  <h2>sobre mí</h2>
-  <p>
-    Escribe aquí una breve presentación.
-  </p>
-
-  <h2>experiencia</h2>
-  <p>
-    — Nombre del proyecto o cliente, año<br>
-    Descripción breve.
-  </p>
-
-  <h2>formación</h2>
-  <p>
-    — Título, institución, año
-  </p>
-
-  <h2>contacto</h2>
-  <p>
-    email@ejemplo.com
-  </p>
+  {{ cv.cvHtml | safe }}
 </div>
