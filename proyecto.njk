@@ -9,17 +9,24 @@ title: Alejandro Antoraz
 pagina: proyectos
 ---
 
-<a href="/" class="volver">← volver a proyectos</a>
-
 <div class="cabecera-proyecto">
   <div class="descripcion-proyecto">
     {{ proyecto.descripcionHtml | safe }}
   </div>
+
+  <a href="/" class="volver">← volver a proyectos</a>
 </div>
 
 <div class="fotos-proyecto">
   {% for imagen in proyecto.imagenes %}
-    <img src="{{ imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
+    <a href="#foto-{{ loop.index }}" class="foto-link">
+      <img src="{{ imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
+    </a>
+    <div class="lightbox" id="foto-{{ loop.index }}">
+      <a href="#" class="lightbox-cerrar">
+        <img src="{{ imagen }}" alt="{{ proyecto.nombre }}">
+      </a>
+    </div>
   {% endfor %}
 </div>
 
