@@ -20,7 +20,7 @@ pagina: proyectos
 <div class="fotos-proyecto">
   {% for imagen in proyecto.imagenes %}
     <a href="#foto-{{ loop.index }}" class="foto-link">
-      <img src="{{ imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
+      <img src="{{ proyecto.imagenesMini[loop.index0] or imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
     </a>
     <div class="lightbox" id="foto-{{ loop.index }}">
       <a href="#" class="lightbox-cerrar">

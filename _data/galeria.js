@@ -73,6 +73,7 @@ module.exports = async function () {
         orden: datos.orden,
         portada: portadaExplicita || imagenesMini[0] || imagenesGrande[0],
         imagenes: imagenesGrande,
+        imagenesMini,
         descripcionHtml,
       });
     }
