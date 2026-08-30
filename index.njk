@@ -1,13 +1,14 @@
 ---
 layout: base.njk
 title: Alejandro Antoraz
+pagina: proyectos
 ---
 
 <div class="grid">
   {% for proyecto in galeria %}
     <a href="/proyectos/{{ proyecto.nombre | slug }}/" class="tarjeta">
       <div class="tarjeta-img">
-        <img src="{{ proyecto.portada }}" alt="{{ proyecto.nombre }}" loading="lazy">
+        <img src="{{ proyecto.portada }}" alt="{{ proyecto.titulo or proyecto.nombre }}" loading="lazy">
       </div>
       <h3>{{ proyecto.titulo or proyecto.nombre }}</h3>
     </a>

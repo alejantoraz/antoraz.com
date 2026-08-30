@@ -4,6 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  {% if proyecto %}
+    {% set metaDescripcion = proyecto.descripcionHtml | striptags | truncate(160) %}
+  {% elif pagina == "cv" %}
+    {% set metaDescripcion = "Currículum de Alejandro Antoraz Alonso, artista visual y fotógrafo, profesor de Diseño Gráfico en la Escuela de Arte de Valladolid." %}
+  {% elif pagina == "contacto" %}
+    {% set metaDescripcion = "Contacto de Alejandro Antoraz Alonso: correo electrónico y redes sociales." %}
+  {% else %}
+    {% set metaDescripcion = "Portfolio fotográfico de Alejandro Antoraz Alonso: proyectos personales que exploran el paisaje, el paisanaje y la extrañeza de lo cotidiano." %}
+  {% endif %}
+  <meta name="description" content="{{ metaDescripcion }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ metaDescripcion }}">
+  {% if proyecto %}
+  <meta property="og:image" content="{{ proyecto.portada }}">
+  {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -197,6 +212,7 @@
     <nav>
       <a href="/" class="{% if pagina == 'proyectos' %}activo{% endif %}">proyectos</a>
       <a href="/cv/" class="{% if pagina == 'cv' %}activo{% endif %}">cv</a>
+      <a href="/contacto/" class="{% if pagina == 'contacto' %}activo{% endif %}">contacto</a>
     </nav>
   </header>
   <main>

@@ -20,11 +20,11 @@ pagina: proyectos
 <div class="fotos-proyecto">
   {% for imagen in proyecto.imagenes %}
     <a href="#foto-{{ loop.index }}" class="foto-link">
-      <img src="{{ proyecto.imagenesMini[loop.index0] or imagen }}" alt="{{ proyecto.nombre }}" loading="lazy">
+      <img src="{{ proyecto.imagenesMini[loop.index0] or imagen }}" alt="{{ proyecto.titulo or proyecto.nombre }} — foto {{ loop.index }} de {{ proyecto.imagenes.length }}" loading="lazy">
     </a>
     <div class="lightbox" id="foto-{{ loop.index }}">
       <a href="#cerrar" class="lightbox-cerrar">
-        <img src="{{ imagen }}" alt="{{ proyecto.nombre }}">
+        <img src="{{ imagen }}" alt="{{ proyecto.titulo or proyecto.nombre }} — foto {{ loop.index }} de {{ proyecto.imagenes.length }}">
       </a>
     </div>
   {% endfor %}
