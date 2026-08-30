@@ -124,13 +124,14 @@
       margin-bottom: 1rem;
     }
     .fotos-proyecto {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      columns: 3 340px;
+      column-gap: 1.5rem;
     }
     .fotos-proyecto img {
       width: 100%;
       display: block;
+      margin-bottom: 1.5rem;
+      break-inside: avoid;
     }
     .cv {
       font-size: 0.9rem;
