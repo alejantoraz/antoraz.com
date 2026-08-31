@@ -8,7 +8,7 @@ pagina: proyectos
   {% for proyecto in galeria %}
     <a href="/colecciones/{{ proyecto.nombre | slug }}/" class="tarjeta">
       <div class="tarjeta-img">
-        <img src="{{ proyecto.portada }}" alt="{{ proyecto.titulo or proyecto.nombre }}" loading="lazy">
+        <img src="{{ proyecto.portada }}" alt="{{ proyecto.titulo or proyecto.nombre }}">
       </div>
       <h3>{{ proyecto.titulo or proyecto.nombre }}</h3>
     </a>
