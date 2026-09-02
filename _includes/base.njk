@@ -19,6 +19,32 @@
   {% if proyecto %}
   <meta property="og:image" content="{{ proyecto.portada }}">
   {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alejandro Antoraz Alonso",
+    "url": "https://antoraz.com",
+    "email": "mailto:antoraz@proton.me",
+    "jobTitle": "Fotografo y artista visual",
+    "sameAs": [
+      "https://www.instagram.com/alejantoraz_foto",
+      "https://www.behance.net/alejantoraz",
+      "https://www.flickr.com/photos/alejantoraz/"
+    ]
+  }
+  </script>
+  {% if proyecto %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "{{ proyecto.titulo or proyecto.nombre }}",
+    "description": "{{ proyecto.descripcionHtml | striptags | truncate(160) }}",
+    "url": "https://antoraz.com/colecciones/{{ proyecto.nombre | slug }}/"
+  }
+  </script>
+  {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
